@@ -50,13 +50,19 @@ function person1(name, age){
         console.log(`My name is ${this.name} and I am ${this.age} years old`)
     }
 
+    this.addAge = (numYears) =>{
+        this.age += numYears
+    }
+
 }
 
 let newPerson = new person1('Jaime', 20)
 
-console.log(newPerson.printInfo())
+newPerson.printInfo()
 
+newPerson.addAge(10)
 
+newPerson.printInfo()
 
 
 // Use an arrow to create the printInfo method
@@ -67,11 +73,7 @@ console.log(newPerson.printInfo())
 // Create another arrow function for the addAge method that takes a single parameter
 // Adding to the age 
 
-const addAge = () => {
-  
-} 
 
-console.log(addAge(1))
 
 
 // =============Exercise #3 ============//
@@ -86,8 +88,10 @@ const isItBigWord = (str) => {
     return new Promise( () => {
         if (str.length < 10){
             console.log('Small Word')
+            console.log(str.length)
         } else {
             console.log('Big Word')
+            console.log(str.length)
         }
     })
 }
